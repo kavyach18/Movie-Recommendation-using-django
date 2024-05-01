@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 import os
 from pathlib import Path
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -25,7 +24,7 @@ SECRET_KEY = 'django-insecure-tc+r^i91yagn&ettsc7z#c(i#=q!!+@0^46soxie0h=qf+@b$_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com', 'movie-recommendation-using-django-3.onrender.com']
 
 
 # Application definition
@@ -77,7 +76,7 @@ WSGI_APPLICATION = 'moviesapp.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
+    'default': {  #dj_database_url.parse(os.environ.get("DATABASE_URL"))
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR/'db.sqlite3', 
         # 'NAME': 'mrDB',  # database name
