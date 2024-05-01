@@ -1,0 +1,27 @@
+{% include 'top.html' %}
+{% load static %}
+
+
+<body style="margin-top: 200px; margin-left: 500px;">
+    <br> <br><br>
+  
+{% if login %}
+<h2>Login</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Login</button>
+</form>
+<p>Don't have an account? <a href="{% url 'signup' %}">Sign up</a></p>
+{% else %}
+<!-- signup.html -->
+
+<h2>Sign Up</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" style="align-content: center;align:center; margin-left:80px">Sign Up</button>
+</form>
+{% endif %}
+
+</body>
